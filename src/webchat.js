@@ -1,6 +1,6 @@
 // Функція для завантаження повідомлень
 function loadMessages() {
-  fetch("get_messages.php")
+  fetch("src/get_messages.php")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("messages").innerHTML = data;
@@ -12,7 +12,7 @@ function sendMessage(username, message) {
   formData.append("username", username);
   formData.append("message", message);
 
-  fetch("send_message.php", {
+  fetch("src/send_message.php", {
     method: "POST",
     body: formData,
   })

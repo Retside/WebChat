@@ -13,7 +13,7 @@ if (file_exists($messages_file)) {
         
         foreach ($lines as $line) {
             if (!empty($line)) {
-                echo "<div>" . htmlspecialchars($line) . "</div>";
+                echo "<div class='message'>" . htmlspecialchars($line) . "</div>";
             }
         }
     } else {
