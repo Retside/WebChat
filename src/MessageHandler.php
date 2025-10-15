@@ -1,62 +1,53 @@
 <?php
-class MessageHandler {
-    private $messagesFile = 'messages.txt';
-    private $maxMessages = 75;
 
-    //Конструктор
+require_once 'FileStorage.php';
 
-    public function __construct(string $messageFile = 'messages.txt', int $maxMessages = 75) {
-        $this->messagesFile = $messageFile;
+class MessageHandler
+{
+    private FileStorage $storage;
+    private int $maxMessages;
+    
+
+    // Конструктор
+    public function __construct(string $messagesFile = 'messages.txt', int $maxMessages = 75)
+    {
+        $this->storage = new FileStorage($messagesFile);
         $this->maxMessages = $maxMessages;
-
-        if (!file_exists($this->messagesFile)) {
-            file_put_contents($this->messagesFile, '');
-        }
     }
-
-    // Відправка повідомлення (на основі send_message.php)
-
-    public function sendMessage(string $username, string $message) : bool {
-
+    
+    // Відправка повідомлення
+    public function sendMessage(string $username, string $message): bool
+    {
         $username = trim($username);
         $message = trim($message);
-
+        
         if (empty($username) || empty($message)) {
             return false;
         }
-
+        
         $timestamp = date('H:i:s');
-
-        $message_line = "[$timestamp] $username: $message\n";
-
-        $result = file_put_contents($this->messagesFile, $message_line, FILE_APPEND | LOCK_EX);
-        return $result !== false;
-
+        $messageLine = "[$timestamp] $username: $message\n";
+        
+        return $this->storage->saveMessage($messageLine);
     }
-
-
-    // Отримання повідомлень (на основі get_messages.php)
-    public function getMessages() : string{
-        if (!file_exists($this->messagesFile)) {
+    
+    // Отримання повідомлень
+    public function getMessages(): string
+    {
+        $lines = $this->storage->getMessages($this->maxMessages);
+        
+        if (empty($lines)) {
             return "<div>Поки що немає повідомлень...</div>";
         }
-
-        $messages = file_get_contents($this->messagesFile);
-
-        if (empty($messages)) {
-            return "<div>Поки що немає повідомлень...</div>";
-        }
-
-        $lines = explode("\n", trim($messages));
-        $lines = array_slice($lines, -$this->maxMessages);
-
+        
         $html = '';
         foreach ($lines as $line) {
             if (!empty($line)) {
                 $html .= "<div class='message'>" . htmlspecialchars($line) . "</div>";
             }
         }
-        return $html;
+        
+        return $html ?: "<div>Поки що немає повідомлень...</div>";
     }
-
 }
+?>
