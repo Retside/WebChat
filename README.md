@@ -59,20 +59,19 @@
 
 ---
 
-## Jira
-
-https://practical-8-project-management.atlassian.net/jira/core/projects/TLYC/board?filter=&groupBy=status&atlOrigin=eyJpIjoiOGUwOGIxYTFkNWE0NDk0NWIxNTZlMTNjZjQxMWQ4YjAiLCJwIjoiaiJ9
-
----
-
 ## Діаграми класів
 
 <img width="1395" height="587" alt="use_case" src="https://github.com/user-attachments/assets/de9302cb-2a02-40d5-b797-70a32daff0cc" />
 <img width="370" height="872" alt="classes_diagram" src="https://github.com/user-attachments/assets/d0f7aca8-3cdd-4d78-ad53-a3e9f0ac893d" />
 
-
 ---
 
 ## Figma
+
+---
+
+## Jira
+
+https://practical-8-project-management.atlassian.net/jira/core/projects/TLYC/board?filter=&groupBy=status&atlOrigin=eyJpIjoiOGUwOGIxYTFkNWE0NDk0NWIxNTZlMTNjZjQxMWQ4YjAiLCJwIjoiaiJ9
 
 ---
