@@ -1,15 +1,14 @@
 <?php
+
+require_once 'MessageHandler.php';
+
+$messageHandler = new MessageHandler('messages.txt', 75);
+
 if ($_POST) {
     $username = trim($_POST['username']);
     $message = trim($_POST['message']);
-    
-    if (!empty($username) && !empty($message)) {
-        
-        $timestamp = date('H:i:s');
-        $message_line = "[$timestamp] $username: $message\n";
-        
-        file_put_contents('messages.txt', $message_line, FILE_APPEND | LOCK_EX);
-        
+
+    if ($messageHandler->sendMessage($username, $message)) {
         echo 'success';
     } else {
         echo 'error';
