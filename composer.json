@@ -1,0 +1,17 @@
+{
+    "name": "itshniki/web-chat",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "phpunit/phpunit": "^11.5"
+    },
+    "require-dev": {
+        "php": "^8.2",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Itshniki\\WebChat\\": "src/"
+        }
+    }
+}

@@ -75,18 +75,3 @@
 https://practical-8-project-management.atlassian.net/jira/core/projects/TLYC/board?filter=&groupBy=status&atlOrigin=eyJpIjoiOGUwOGIxYTFkNWE0NDk0NWIxNTZlMTNjZjQxMWQ4YjAiLCJwIjoiaiJ9
 
 ---
-
-## Запуск проєкту
-```
-git clone https://github.com/Retside/WebChat
-composer install
-php -S localhost:8000
-```
-
----
-
-## Тестування
-```
-./vendor/bin/phpunit
-```
----
