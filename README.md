@@ -77,7 +77,16 @@ https://practical-8-project-management.atlassian.net/jira/core/projects/TLYC/boa
 ---
 
 ## Запуск проєкту
+```
+git clone https://github.com/Retside/WebChat
+composer install
+php -S localhost:8000
+```
 
-`git clone https://github.com/Retside/WebChat`
+---
 
-`php -S localhost:8000`
+## Тестування
+```
+./vendor/bin/phpunit
+```
+---
