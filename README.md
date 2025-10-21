@@ -68,6 +68,8 @@
 
 ## Figma
 
+https://www.figma.com/site/HHctnx2V7OLSi391KiWQpN/Untitled?node-id=0-1&t=ahJ6t7Yz581nNN5P-1
+
 ---
 
 ## Jira
