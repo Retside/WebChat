@@ -26,14 +26,14 @@ class ChatClient {
       .then((result) => {
         if (result === "success") {
           document.getElementById("message").value = "";
-          loadMessages();
+          this.loadMessages();
         }
       });
   }
 
   startAutoUpdate() {
     this.loadMessages();
-    setInterval(() => this.loadMessages(), this.refreshInterval);
+    setInterval(() => this.loadMessages(), this.updateInterval);
   }
 }
 
